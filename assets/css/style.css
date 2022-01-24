@@ -33,6 +33,19 @@ hr {
   color: #fff;
 }
 
+.btn {
+  background-color: ##ffc451 !important;
+  border: none;
+  color: white !important;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.success {background-color: ##ffc451 !important; color: white !important;} 
+
+
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
