@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>NFT Flexível</title>
+  <title>NFT Crescimento</title>
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -28,15 +28,6 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- Calculadora -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://d3js.org/d3.v5.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js" integrity="sha256-7/yoZS3548fXSRXqc/xYzjsmuW3sFKzuvOCHd06Pmps=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-  
 <style>
 body {
 color: #000 !important; 
@@ -78,39 +69,6 @@ background-color: #fff !important;
 /></noscript>
 <!-- End Facebook Pixel Code -->
 
-<!-- Calculadora -->
-<script>
-    function currencyFormat(value) {
-      return `R$ ${new Intl.NumberFormat('pt-BR').format(value.toFixed(2))}`;
-    }
-
-    function realizaProjecao() {
-	  
-      const compraInicial = document.querySelector('#compraInicial').value;
-
-	  var taxa = 4; // NFT Crescimento Padrao
-	  
-      var periodo = 1;
-
-      taxa = taxa / 100;
-
-      var valorFuturo = (compraInicial * ((1 + taxa) ** periodo)) +
-        0 * (
-          ((1 + taxa) ** periodo) - 1
-        ) / taxa;
-
-      const totalAplicado = (0 * periodo) + parseFloat(compraInicial);
-
-      const valorGanhoBruto = valorFuturo - totalAplicado;
-
-      document.getElementById('valorGanhoBruto').innerText = currencyFormat(valorGanhoBruto)
-      document.getElementById('valorFuturoFinal').innerText = currencyFormat(valorFuturo)
-      document.getElementById('totalAplicado').innerText = currencyFormat(totalAplicado)
-
-    }
-</script>
-<!-- End Calculadora -->
-
 </head>
 
 
@@ -138,17 +96,17 @@ background-color: #fff !important;
           <div class="col-lg-6">
             <div class="portfolio-info">
 			  <ul>
-                <li><h3>Coleção NFT Flexível</h3></li>
-                <li><p>Valorização: 4% ao mês</p></li>
-                <li><p>Vencimento: 1 mês</p></li>
+                <li><h3>Coleção NFT Crescimento</h3></li>
+                <li><p>Valorização: 10% ao mês</p></li>
+                <li><p>Vencimento: 8 meses</p></li>
                 <li><p>Venda: Vencimento</p></li>
               </ul>
 			</div>
             <div class="portfolio-info text-justify">
 			<h3>Detalhes do Produto</h3>
-			  <p>O cliente compra o NFT Flexível da X Capital, o NFT terá uma valorização fixa de 4% ao mês, e no vencimento após 1 mês, a X Capital recomprará este mesmo NFT e pagará a valorização acumulada.</p>
-              <p>A valorização obtida no mês estará disponível para resgate parcial ou total. O valor mínimo de saque é de R$1.000.</p>
-			  <p>Importante: Se o cliente não efetuar o saque no vencimento, o NFT será automaticamente renovado para mais um mês e assim por diante.</p>
+			  <p>O cliente compra o NFT Crescimento da X Capital, o NFT terá uma valorização fixa de 10% ao mês, e no vencimento após 8 meses, a X Capital recomprará este mesmo NFT e pagará a valorização acumulada.</p>
+              <p>A valorização obtida mensalmente não estará disponível para resgate.</p>
+			  <p>Importante: A valorização acumulada do NFT estará disponível apenas no vencimento ao final dos 8 meses.</p>
 			</div>
 		  </div>
 
@@ -168,17 +126,59 @@ background-color: #fff !important;
 	<tr>
       <th scope="row">Mês 01</th>
 	  <td>Fev / 22</td>
-      <td>4%</td>
-      <td>R$400</td>
+      <td>10%</td>
+      <td>R$1.000</td>
+    </tr>
+    <tr>
+      <th scope="row">Mês 02</th>
+	  <td>Mar / 22</td>
+      <td>10%</td>
+      <td>R$1.100</td>
+    </tr>
+    <tr>
+      <th scope="row">Mês 03</th>
+	  <td>Abr / 22</td>
+      <td>10%</td>
+      <td>R$1.210</td>
+    </tr>
+    <tr>
+      <th scope="row">Mês 04</th>
+	  <td>Mai / 22</td>
+      <td>10%</td>
+      <td>R$1.331</td>
+    </tr>
+    <tr>
+      <th scope="row">Mês 05</th>
+	  <td>Jun / 22</td>
+      <td>10%</td>
+      <td>R$1.464</td>
+    </tr>
+    <tr>
+      <th scope="row">Mês 06</th>
+	  <td>Jul / 22</td>
+      <td>10%</td>
+      <td>R$1.610</td>
+    </tr>
+    <tr>
+      <th scope="row">Mês 07</th>
+	  <td>Ago / 22</td>
+      <td>10%</td>
+      <td>R$1.771</td>
+    </tr>
+    <tr>
+      <th scope="row">Mês 08</th>
+	  <td>Set / 22</td>
+      <td>10%</td>
+      <td>R$1.948</td>
     </tr>
 	<tr>
 	  <th colspan="4">Valor de Compra Inicial: R$10.000</th>
 	</tr>
 	<tr>
-	  <th colspan="4">Valorização do NFT no vencimento: R$400</th>
+	  <th colspan="4">Valorização do NFT ao longo de 8 meses: R$11.435</th>
 	</tr>
 	<tr>
-	  <th colspan="4">Valorização do NFT + Valor de Compra Inicial: R$10.400</th>
+	  <th colspan="4">Valorização do NFT + Valor de Compra Inicial: R$21.435</th>
 	</tr>
   </tbody>
 </table>	
@@ -190,57 +190,23 @@ background-color: #fff !important;
       </div>
     </section><!-- End Portfolio Details Section -->
 
-	</br>
-    <!-- ======= Calculadora ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container">
-        <div class="row gy-12">
 
-          <div class="col-lg-6">
-            <div class="portfolio-info">
-				<h3>Calculadora</h3>
-				<p style="font-size:10px;">Entre com o valor da compra.</p>
-				<label><h2>Compra Inicial:</h2></label>
-				<input type="number" value="0" class="form-control" id="compraInicial" oninput="realizaProjecao()">
-				</br>
-			  </div>
-			</div>
-			
-            <div class="col-lg-6">
-			  <div class="portfolio-info">
-			    <h3>Resultado</h3>
-			      <table class="table">
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
 
-				  <tbody>
-				  <tr style="background-color: #e6e6e6;">
-					<td scope="row">Compra Inicial:</td>
-					<td id="totalAplicado"></td>
-				  </tr>
-				  <tr style="background-color: #e6e6e6;">
-					<td scope="row">Valorização:</td>
-					<td id="valorGanhoBruto"></td>
-				  </tr>
-				  <tr style="background-color: #e6e6e6;">
-					<td scope="row">Valor de Venda:</td>
-					<td id="valorFuturoFinal"></td>
-				  </tr>
-                  </tbody>
-                  </table>
-	  
-				</div>
-			</div>
-			
-		  </div>
-		</div>
-    </section><!-- End Calculadora -->
-
+	
   </main><!-- End #main -->
+<!-- test -->
 
-<!--
 <div class="container text-center">
   <a href="https://docs.google.com/spreadsheets/d/1sDUIGCAZ7MADbMGyodwSh3NPKF9EPr7kKRV9QxFGWSA/edit#gid=869460832" class="btn btn-success" role="button"><i class="fa fa-calculator fa-2x"></i> Simule aqui a valorização do seu NFT!</a>
 </div>
--->
 </br>
 
   <!-- ======= Footer ======= -->
@@ -255,6 +221,7 @@ background-color: #fff !important;
     </div>
   </footer><!-- End Footer -->
 
+  <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter.js"></script>
