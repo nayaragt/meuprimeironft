@@ -28,6 +28,16 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- Calculadora -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://d3js.org/d3.v5.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js" integrity="sha256-7/yoZS3548fXSRXqc/xYzjsmuW3sFKzuvOCHd06Pmps=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  
+  
 <style>
 body {
 color: #000 !important; 
@@ -71,6 +81,44 @@ background-color: #fff !important;
 /></noscript>
 <!-- End Facebook Pixel Code -->
 
+<!-- Calculadora -->
+<script>
+    function currencyFormat(value) {
+      return `R$ ${new Intl.NumberFormat('pt-BR').format(value.toFixed(2))}`;
+    }
+
+    function realizaProjecao() {
+	  
+      const compraInicial = document.querySelector('#compraInicial').value;
+
+	  var taxa = 8; // NFT Recorrencia Padrao
+	  
+      var periodo = 12;
+
+      taxa = taxa / 100;
+
+      var valorFuturo = (compraInicial * ((1 + taxa) ** 1)) +
+        0 * (
+          ((1 + taxa) ** periodo) - 1
+        ) / taxa;
+		
+	  var aluguel = valorFuturo - compraInicial
+	  
+	  var valorFinal = aluguel * 12;
+	 
+      const totalAplicado = (0 * periodo) + parseFloat(compraInicial);
+
+      const valorGanhoBruto = valorFuturo - totalAplicado;
+
+      document.getElementById('valorGanhoBruto').innerText = currencyFormat(valorGanhoBruto)
+      document.getElementById('valorFuturoFinal').innerText = currencyFormat(valorFinal)
+      document.getElementById('totalAplicado').innerText = currencyFormat(totalAplicado)
+
+	console.log(valorFuturo);
+	console.log(valorFinal);
+	
+    }
+</script>
 
 </head>
 
@@ -127,73 +175,73 @@ background-color: #fff !important;
   <tbody>
 	<tr>
       <td>Mês 01</td>
-	  <td>Fev / 22</td>
-      <td>8%</td>
-      <td>R$ 800</td>
-    </tr>
-    <tr>
-      <td>Mês 02</td>
 	  <td>Mar / 22</td>
       <td>8%</td>
       <td>R$ 800</td>
     </tr>
     <tr>
-      <td>Mês 03</td>
+      <td>Mês 02</td>
 	  <td>Abr / 22</td>
       <td>8%</td>
       <td>R$ 800</td>
     </tr>
     <tr>
-      <td>Mês 04</td>
+      <td>Mês 03</td>
 	  <td>Mai / 22</td>
       <td>8%</td>
       <td>R$ 800</td>
     </tr>
     <tr>
-      <td>Mês 05</td>
+      <td>Mês 04</td>
 	  <td>Jun / 22</td>
       <td>8%</td>
       <td>R$ 800</td>
     </tr>
     <tr>
-      <td>Mês 06</td>
+      <td>Mês 05</td>
 	  <td>Jul / 22</td>
       <td>8%</td>
       <td>R$ 800</td>
     </tr>
     <tr>
-      <td>Mês 07</td>
+      <td>Mês 06</td>
 	  <td>Ago / 22</td>
       <td>8%</td>
       <td>R$ 800</td>
     </tr>
     <tr>
-      <td>Mês 08</td>
+      <td>Mês 07</td>
 	  <td>Set / 22</td>
       <td>8%</td>
       <td>R$ 800</td>
     </tr>
     <tr>
-      <td>Mês 09</td>
+      <td>Mês 08</td>
 	  <td>Out / 22</td>
       <td>8%</td>
       <td>R$ 800</td>
     </tr>
     <tr>
-      <td>Mês 10</td>
+      <td>Mês 09</td>
 	  <td>Nov / 22</td>
       <td>8%</td>
       <td>R$ 800</td>
     </tr>
     <tr>
-      <td>Mês 11</td>
+      <td>Mês 10</td>
 	  <td>Dez / 22</td>
       <td>8%</td>
       <td>R$ 800</td>
     </tr>
     <tr>
-      <td>Mês 12</td>
+      <td>Mês 11</td>
 	  <td>Jan / 23</td>
+      <td>8%</td>
+      <td>R$ 800</td>
+    </tr>
+    <tr>
+      <td>Mês 12</td>
+	  <td>Fev / 23</td>
       <td>8%</td>
       <td>R$ 800</td>
     </tr>
@@ -201,11 +249,11 @@ background-color: #fff !important;
 	  <th colspan="4">Valor de Compra Inicial: R$10.000</th>
 	</tr>
 	<tr>
-	  <th colspan="4">Valorização do NFT ao longo de 12 meses: R$9.600</th>
+	  <th colspan="4">Total Aluguel do NFT em 12 meses: R$9.600</th>
 	</tr>
-	<tr>
-	  <th colspan="4">Valorização do NFT + Valor de Compra Inicial: R$19.600</th>
-	</tr>
+	<!--<tr>
+	  <th colspan="4">Total Aluguel do NFT + Valor de Compra Inicial: R$19.600</th>
+	</tr>-->
   </tbody>
 </table>	
 
@@ -216,11 +264,59 @@ background-color: #fff !important;
       </div>
     </section><!-- End Portfolio Details Section -->
 
+
+	</br>
+    <!-- ======= Calculadora ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+        <div class="row gy-12">
+
+          <div class="col-lg-6">
+            <div class="portfolio-info">
+				<h3>Calculadora</h3>
+				<p style="font-size:10px;">Entre com o valor da compra.</p>
+				<label><p style="font-weight: bold;">Compra Inicial:</p></label>
+				<input type="number" value="0" class="form-control" id="compraInicial" oninput="realizaProjecao()">
+				</br>
+			  </div>
+			</div>
+			
+            <div class="col-lg-6">
+			  <div class="portfolio-info">
+			    <h3>Resultado</h3>
+			      <table class="table">
+
+				  <tbody>
+				  <tr style="background-color: #e6e6e6;">
+					<td scope="row">Compra Inicial:</td>
+					<td id="totalAplicado"></td>
+				  </tr>
+				  <tr style="background-color: #e6e6e6;">
+					<td scope="row">Aluguel Fixo Mensal:</td>
+					<td id="valorGanhoBruto"></td>
+				  </tr>
+				  <tr style="background-color: #e6e6e6;">
+					<td scope="row">Total Aluguel do NFT em 12 meses:</td>
+					<td id="valorFuturoFinal"></td>
+				  </tr>
+                  </tbody>
+                  </table>
+	  
+				</div>
+			</div>
+			
+		  </div>
+		</div>
+    </section><!-- End Calculadora -->
+	
+	
   </main><!-- End #main -->
-  
+
+<!-- 
 <div class="container text-center">
   <a href="https://docs.google.com/spreadsheets/d/1sDUIGCAZ7MADbMGyodwSh3NPKF9EPr7kKRV9QxFGWSA/edit#gid=869460832" class="btn btn-success" role="button"><i class="fa fa-calculator fa-2x"></i> Simule aqui a valorização do seu NFT!</a>
 </div>
+-->
 </br>
 	
   <!-- ======= Footer ======= -->
