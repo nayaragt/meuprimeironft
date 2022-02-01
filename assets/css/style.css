@@ -42,9 +42,19 @@ hr {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 600px) {
+  .btn {
+    font-size: 10px !important; 
+  }
+}
+
 .success {background-color: ##ffc451 !important; color: white !important;} 
 
-
+@media only screen and (max-width: 600px) {
+  .table {
+	font-size: 8px !important; 
+  }
+}
 
 /*--------------------------------------------------------------
 # General
