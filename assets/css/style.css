@@ -56,6 +56,28 @@ hr {
   }
 }
 
+@media only screen and (max-width: 600px) {
+  h2 {
+	font-size: 14px !important; 
+	
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  label {
+	font-size: 12px !important; 
+	
+  }
+}
+
+th.active {
+	background-color: #c8c8c8 !important;
+}
+
+tr.active {
+	background-color: #c8c8c8 !important;
+}
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
