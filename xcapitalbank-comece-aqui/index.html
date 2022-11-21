@@ -148,6 +148,26 @@ body {
   font-size:10px !important;
 }
 
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.newspaper {
+  column-count: 3;
+  column-gap: 40px;
+}
+
 </style>
   </head>
   <body>
@@ -186,6 +206,29 @@ body {
     <div class="col-xs-12">
       <img src="img/header-2.png" alt="image" width="100%" style="border-radius: 5px;">
 	</div>
+  </div>
+</div>
+
+</br>
+
+<div class="links-container">
+<!--<div class="links-container text-center round">-->
+  <div class="row">
+  
+    <div class="col-xs-6">
+	  <div class="col-md-12 links-container text-center round">
+	  <a href="https://www.youtube.com/watch?v=3e_k_K9fMGU" target="_blank">
+      <img src="img/comofunciona3.png" alt="image" width="100%" style="border-radius: 5px;"></a>
+	  </div>
+	</div>
+	
+    <div class="col-xs-6">
+	  <div class="col-md-12 links-container text-center round">
+	  <a href="https://www.youtube.com/watch?v=0slkEYi4pQE" target="_blank">
+      <img src="img/comofunciona4.png" alt="image" width="100%" style="border-radius: 5px;"></a>
+	  </div>
+	</div>
+	
   </div>
 </div>
 
